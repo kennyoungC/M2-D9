@@ -41,3 +41,35 @@ a:hover {
 #album-review > div.row > div a:last-of-type {
   font-size: 32px;
 }
+
+#ayra-cont,
+#olamide-cont,
+#kizz-cont {
+  transition: all 0.3s;
+}
+
+#ayra-cont:hover {
+  animation: fadeIn 2s;
+}
+#olamide-cont:hover {
+  animation: fadeIn 2s;
+}
+#kizz-cont:hover {
+  animation: fadeIn 2s;
+}
+.add-track:hover {
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+}
+#album-review > .row {
+  /* background-color: black; */
+}
+.delete {
+  transition: all 0.3s;
+  opacity: 0;
+}
+.delete:hover {
+  opacity: 1;
+}
+#table .table tbody tr:nth-child(even) {
+  /* background-color: #aaa; */
+}

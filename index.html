@@ -481,6 +481,24 @@
           >
         </div>
       </div>
+      <!-- EXERCISE 6
+        Add an "Add Track" button under the tracklist of the album. 
+        It should have a nice shadow transition when its hovered (with the box-shadow property) 
+        to look like as if the button was elevating itself.
+    -->
+
+      <!-- EXERCISE 7
+        On the click of "Add Track" button, a modal should appear.
+        (check in the documentation the modal + button example)
+        
+        The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
+        - Track number
+        - Track title
+        - Track duration
+
+        The fields should be inside an Input Group and divided in 2 columns.
+    -->
+
       <hr />
     </section>
     <section class="container" id="top-10">
@@ -593,6 +611,123 @@
         </div>
       </div>
     </section>
+    <section>
+      <!-- EXERCISE 4
+        Create a new section with an album tracklist inside a Bootstrap table.
+        The row colors of the table must be alternated.
+
+        There should be a column for the track order number, one for the title and one for the track duration.
+        (If you want, you can also add extra columns)
+    -->
+      <div class="container" id="table">
+        <table class="table table-striped text-center">
+          <thead class="">
+            <tr>
+              <th scope="col">track order Number</th>
+              <th scope="col">Title</th>
+              <th scope="col">Year</th>
+              <th scope="col">track Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">9</th>
+              <td>Superstar</td>
+              <td>2006</td>
+              <td>2hrs</td>
+            </tr>
+            <tr>
+              <th scope="row">12</th>
+              <td>Good Time</td>
+              <td>2019</td>
+              <td>5hrs</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Barnabas</td>
+              <td>2022</td>
+              <td>6hrs</td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Better Time</td>
+              <td>2018</td>
+              <td>7hr</td>
+            </tr>
+            <tr>
+              <th scope="row">16</th>
+              <td>Twice as Tall</td>
+              <td>2020</td>
+              <td>4hrs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div class="container">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary add-track"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        Add Track
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                ADD YOUR FAVOURITE TRACK HERE!
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <label for="track-number">Track number</label>
+                  <input type="number" id="track-number" />
+                  <label for="track-title">Track Title</label>
+                  <input type="text" id="track-title" />
+                </div>
+                <div class="col">
+                  <label for="track-duration">Track Duration</label>
+                  <input type="text" id="track-duration" />
+                  <label for="track-year">Track Year</label>
+                  <input type="number" id="track-year" />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary btn-add">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="container-fluid bg-dark p-3">
       <div class="container text-white">
         <p class="total">TOTAL IMAGES:</p>
@@ -604,14 +739,6 @@
       </div>
     </footer>
 
-    <!-- EXERCISE 4
-        Create a new section with an album tracklist inside a Bootstrap table.
-        The row colors of the table must be alternated.
-
-        There should be a column for the track order number, one for the title and one for the track duration.
-        (If you want, you can also add extra columns)
-    -->
-
     <!-- EXERCISE 5
         Add a DELETE bootstrap button at the end of each row of the tracklist. 
         Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
@@ -619,24 +746,6 @@
         ## EXTRA CSS CHALLENGE ##
         Make only one button visible at a time, for each row, when the single row gets hovered. 
         Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
-    -->
-
-    <!-- EXERCISE 6
-        Add an "Add Track" button under the tracklist of the album. 
-        It should have a nice shadow transition when its hovered (with the box-shadow property) 
-        to look like as if the button was elevating itself.
-    -->
-
-    <!-- EXERCISE 7
-        On the click of "Add Track" button, a modal should appear.
-        (check in the documentation the modal + button example)
-        
-        The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
-        - Track number
-        - Track title
-        - Track duration
-
-        The fields should be inside an Input Group and divided in 2 columns.
     -->
 
     <!-- ############### -->
