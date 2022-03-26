@@ -67,9 +67,41 @@ a:hover {
   transition: all 0.3s;
   opacity: 0;
 }
-.delete:hover {
+table tbody tr:hover .delete {
+  cursor: pointer;
   opacity: 1;
 }
-#table .table tbody tr:nth-child(even) {
+#table .table tbody tr:nth-child(2n) {
   /* background-color: #aaa; */
+}
+.new-row:last-child {
+  animation: fadeIn 3s;
+}
+.hidden {
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+.alert.alert-success {
+  position: fixed;
+  top: 75px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* transform: translateY(50%); */
+  opacity: 0;
+  animation: slide-from-top 5s forwards;
+}
+@keyframes slide-from-top {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
 }
