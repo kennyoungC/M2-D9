@@ -24,6 +24,9 @@ const toDeleteCol = function () {
   });
 };
 toDeleteCol();
+// const addDisplayBlock = function () {
+//   document.querySelector(`.alert.alert-success`).classList.add(`d-none`);
+// };
 const addNewRow = function () {
   btnAdd.addEventListener(`click`, function () {
     const newRow = ` <tr class="new-row">
@@ -41,8 +44,9 @@ const addNewRow = function () {
     // setTimeout(() => {
     //   alert(`track added successfully`);
     // }, 500);
-    document.querySelector(`.alert.alert-success`).classList.toggle(`d-none`);
-    document.querySelector(`.alert.alert-success`).classList.add(`d-none`);
+    const alert = document.querySelector(`.alert.alert-success`);
+
+    alert.classList.toggle(`d-none`);
 
     trackDuration.value = "";
     trackNumber.value = "";

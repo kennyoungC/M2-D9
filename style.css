@@ -88,7 +88,7 @@ table tbody tr:hover .delete {
   left: 50%;
   transform: translate(-50%, 0);
   /* transform: translateY(50%); */
-  opacity: 0;
+  /* opacity: 0; */
   animation: slide-from-top 5s forwards;
 }
 @keyframes slide-from-top {
@@ -104,4 +104,11 @@ table tbody tr:hover .delete {
     opacity: 0;
     transform: translate(-50%, -50%);
   }
+}
+.jumbotron {
+  height: calc(100vh - 72px);
+  background: url(./pexels-photo-144428.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
