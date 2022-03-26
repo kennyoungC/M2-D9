@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--
+  IMPORTANT:
+  Start from the previous Musical assignment project you've created on M2-D2
+      
+  ASSIGNMENT RULES
+  - The project must be pushed to a new repository and linked in EduFlow by the end of the day.
+  - You can google / use StackOverflow BUT we suggest you to use just the material provided and documentation.
+  - To test the page, open it with your browser and inspect it with developer tools / device emulator.
+  - Use Bootstrap4.6 classes to create the page.
+  - Use containers, rows and cols in order to achieve a great responsive layout.
+  
+  NOTE:
+  Most of the requirements in this exercises reference a bootstrap's functionality or component. 
+  Make sure you check the documentation before creting anything custom.
+  -->
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -15,10 +30,643 @@
       integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="./style.css" />
     <title>CSS ANIMATIONS</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark p-3 sticky-top">
+      <a class="navbar-brand text-white" href="#"
+        >KEN<span>music</span> EM<span>pire</span></a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarScroll"
+        aria-controls="navbarScroll"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul
+          class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll"
+          style="max-height: 100px"
+        >
+          <li class="nav-item active">
+            <a class="nav-link text-white text-white" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item text-white">
+            <a class="nav-link text-white" href="#bio">Bio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#top-10">Top 10</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#album-review">Album Review</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input
+            class="form-control mr-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline- text-white" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container-xl" id="bio">
+      <!-- EXERCISE 1
+        Create a Jumbotron section with a quick explanation / image of the website.
+        Make it appear with a fade-in animation effect when the page loads.
+    -->
+      <div class="row p-sm-5 p-3 mb-2 bg-secondary text-white">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+          <img
+            src="./images/my profile photo.jpg"
+            class="img-fluid img-thumbnail bio-img"
+            alt=""
+          />
+        </div>
+        <div
+          class="col-12 col-sm-12 col-md-12 col-lg-6 align-self-end font-weight-normal"
+        >
+          <p class="bio mt-3 lead">
+            My name is <strong>OBI KENNETH</strong> <br />
+
+            I am creative, hardworking and detail-oriented with excellent verbal
+            and good communication skill. I'm in my first year studying
+            informatics system. I chose that field of study because I’ve always
+            been interested in technology. I have previously worked as a sales
+            Administrator where I maintain and update sales and customer
+            records. Develop monthly sales reports Communicate important
+            feedback from customers internally and ensures timely deliveries. Am
+            currently learning soffware development to further improve my
+            programming skills. This far, I have learnt and already coding with
+            <span class="font-italic">HTML</span>,
+            <span class="font-italic">CSS</span>,
+            <span class="font-italic">JAVASCRIPT</span>, and
+            <span class="font-italic">BOOTSTRAP</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <section class="container" id="top-10">
+      <!-- EXERCISE 2
+        Use a Bootstrap Card to contain every album in the favorite list you previously created.
+        Use the elements of a card bootstrap provides you with to display nicely the album informations such as: album title, artist, year, etc..
+    -->
+      <!-- EXERCISE 3
+        Foreach album in the favorite list, place a badge on the top-left corner of the album with the genre of the music
+    -->
+      <hr />
+      <h1
+        class="text-capitalize mt-3 font-italic text-sm-center text-md-center"
+      >
+        My top ten best albums:
+      </h1>
+      <hr />
+      <div class="row p-sm-5 p-3 mb-0 bg-secondary text-white">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/wizkid.jpg"
+              class="img-fluid w-100 img-thumbnail img-thumbnail"
+              alt="wizkid MIL album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+          <p class="mb-0">No. 1</p>
+          <p class="mb-0">Wizkid</p>
+          <p class="mb-0">Made in lagos (2020)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/burna boy.jpg"
+              class="img-fluid w-100 img-thumbnail"
+              alt="burnaboy twice as tall album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 2</p>
+          <p class="mb-0">Burna Boy</p>
+          <p class="mb-0">Twice as tall (2020)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/davido.jpg"
+              class="img-fluid w-100 img-thumbnail"
+              alt="a better time davido album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 3</p>
+          <p class="mb-0">Davido</p>
+          <p class="mb-0">A better time (2020)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div position-relative>
+            <img
+              src="./images/Olamide-–-UY-Scuti-Album.png"
+              class="img-fluid w-100 img-thumbnail"
+              alt="UY-Scuti-Album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 4</p>
+          <p class="mb-0">Olamide</p>
+          <p class="mb-0">UY-Scuti (2021)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/chike.jpg"
+              class="img-fluid w-100 img-thumbnail"
+              alt="boo of the booless album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 5</p>
+          <p class="mb-0">Chike</p>
+          <p class="mb-0">Boo of the booless (2020)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/wiz superstar.jpg"
+              class="img-fluid w-100 img-thumbnail"
+              alt="wizkid superstar album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 6</p>
+          <p class="mb-0">Wizkid</p>
+          <p class="mb-0">Superstar (2011)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/ayra starr.jpg"
+              class="img-fluid w-100 img-thumbnail"
+              alt="atra starr album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 7</p>
+          <p class="mb-0">Ayra Starr</p>
+          <p class="mb-0">19 & Dangerous (2021)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/olamide.jpg"
+              class="img-fluid w-100 img-thumbnail"
+              alt="carpe diem album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 8</p>
+          <p class="mb-0">Olamide</p>
+          <p class="mb-0">Carpe Diem (2020)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/kizz daniel.jpg"
+              class="img-fluid w-100 img-thumbnail"
+              alt="Barnabas album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 9</p>
+          <p class="mb-0">Kizz Daniel</p>
+          <p class="mb-0">Barnabas (2021)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <div class="position-relative">
+            <img
+              src="./images/Joeboy-Somewhere-Between-Beauty-Magic-Sbbm-Album-artwork.jpg"
+              class="img-fluid w-100 img-thumbnail"
+              alt="Somewhere-Between-Beauty-Magic album cover"
+            />
+            <span class="badge badge-success music-badge">Music</span>
+          </div>
+
+          <p class="mb-0">No. 10</p>
+          <p class="mb-0">JoeBoy</p>
+          <p class="mb-0">Somewhere Between Beauty Magic(2021)</p>
+        </div>
+      </div>
+    </section>
+    <section class="container review" id="album-review">
+      <hr />
+      <h2
+        class="text-capitalize mt-3 font-italic text-sm-center text-md-center"
+      >
+        Album Review
+      </h2>
+
+      <hr />
+      <div class="row p-sm-5 p-3">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" id="kizz-cont">
+          <img
+            src="./images/kizz daniel.jpg"
+            class="card-img-top"
+            alt="kizz daniel album cover"
+            data-toggle="collapse"
+            data-target="#kizzdaniel"
+          />
+          <div class="collapse show" id="kizzdaniel">
+            <div class="card-body">
+              <h5 class="card-title">KIZZ DANIEL</h5>
+              <p class="card-text">Album &middot; 2021</p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Pour Me Water <br />
+                <span> Kizz Daniel</span>
+              </li>
+              <li class="list-group-item">
+                Addict <br />
+                <span> Kizz Daniel</span>
+              </li>
+              <li class="list-group-item">
+                Eh God (Barnabas) <br />
+                <span> Kizz Daniel</span>
+              </li>
+              <li class="list-group-item">
+                Oshe (feat. The Cavemen.)<br />
+                <span> Kizz Daniel, The Cavemen.</span>
+              </li>
+              <li class="list-group-item">
+                Burn <br />
+                <span> Kizz Daniel</span>
+              </li>
+              <li class="list-group-item">
+                Lie <br />
+                <span> Kizz Daniel</span>
+              </li>
+              <li class="list-group-item">
+                Skin <br />
+                <span> Kizz Daniel, Kelvyn Colt</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <a
+              href="https://open.spotify.com/album/0uk18xBtNopYpvMT1t7BCU?autoplay=true"
+              class="card-link"
+              target="_blank"
+              >Listen Now</a
+            >
+          </div>
+          <a class="btn btn-danger border rounded" href="#kizz-cont">Delete</a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" id="ayra-cont">
+          <img
+            src="./images/ayra starr.jpg"
+            class="card-img-top"
+            alt="Ayra starr album cover"
+            data-toggle="collapse"
+            data-target="#ayra"
+          />
+          <div class="collapse show" id="ayra">
+            <div class="card-body">
+              <h5 class="card-title">Ayra Starr</h5>
+              <p class="card-text">Album &middot; 2021</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Fashion Killer <br />
+                <span>Ayra starr</span>
+              </li>
+              <li class="list-group-item">
+                Lonely <br />
+                <span>Ayra starr</span>
+              </li>
+              <li class="list-group-item">
+                Snitch <br />
+                <span>Ayra starr, Foushee</span>
+              </li>
+              <li class="list-group-item">
+                In Between<br />
+                <span> Ayra starr, The Cavemen.</span>
+              </li>
+              <li class="list-group-item">
+                Beggie Beggie <br />
+                <span>Ayra starr, CKay</span>
+              </li>
+              <li class="list-group-item">
+                Karma <br />
+                <span>Ayra starr</span>
+              </li>
+              <li class="list-group-item">
+                Bloody Samaritan <br />
+                <span> Ayra starr</span>
+              </li>
+              <li class="list-group-item">
+                Bridgertn <br />
+                <span>Ayra starr</span>
+              </li>
+              <li class="list-group-item">
+                Amin <br />
+                <span>Ayra starr</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <a
+              href="https://open.spotify.com/album/0AjdvP8p42lwSzmN0PpwJv?autoplay=true"
+              class="card-link"
+              target="_blank"
+              >Listen Now</a
+            >
+          </div>
+          <a class="btn btn-danger border rounded" href="#ayra-cont">Delete</a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" id="olamide-cont">
+          <img
+            src="./images/olamide.jpg"
+            class="card-img-top"
+            alt="olamide album cover"
+            data-toggle="collapse"
+            data-target="#olamide"
+          />
+          <div class="collapse show" id="olamide">
+            <div class="card-body">
+              <h5 class="card-title">Olamide</h5>
+              <p class="card-text">Album &middot; 2020</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Another Level <br />
+                <span> Olamide</span>
+              </li>
+              <li class="list-group-item">
+                Green Light <br />
+                <span>Olamide</span>
+              </li>
+              <li class="list-group-item">
+                Infinity (feat. Omay Lay) <br />
+                <span>Olamide, Omay Lay</span>
+              </li>
+              <li class="list-group-item">
+                Eru<br />
+                <span>Olamide</span>
+              </li>
+              <li class="list-group-item">
+                Triumphant (feat. Bella Shmurda) <br />
+                <span>Olamide, Bella Shmurda</span>
+              </li>
+              <li class="list-group-item">
+                At Your Service <br />
+                <span>Olamide</span>
+              </li>
+              <li class="list-group-item">
+                Do Better <br />
+                <span>Olamide</span>
+              </li>
+              <li class="list-group-item">
+                Chimichanga <br />
+                <span>Olamide</span>
+              </li>
+              <li class="list-group-item">
+                Shilalo (feat. Phyno) <br />
+                <span> Olamide, Phyno</span>
+              </li>
+              <li class="list-group-item">
+                Loading (feat. Bad Boy Timz) <br />
+                <span> Olamide, Bad Boy Timz</span>
+              </li>
+              <li class="list-group-item">
+                Unconditionality (feat. Peruzzi) <br />
+                <span>Olamide, Peruzzi</span>
+              </li>
+              <li class="list-group-item">
+                Plenty (feat. Fireboy DML) <br />
+                <span>Olamide, Fireboy DML</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <a
+              href="https://open.spotify.com/album/6fG2eFCgUmytQWL6umtsCh?autoplay=true"
+              class="card-link"
+              target="_blank"
+              >Listen Now</a
+            >
+            <!-- <a href="#" class="card-link">Another link</a> -->
+          </div>
+          <a class="btn btn-danger border rounded" href="#olamide-cont"
+            >Delete</a
+          >
+        </div>
+      </div>
+      <hr />
+    </section>
+    <section class="container" id="top-10">
+      <h1
+        class="text-capitalize mt-3 font-italic text-sm-center text-md-center"
+      >
+        my top 10 worst album
+      </h1>
+      <hr />
+      <div class="row p-sm-5 p-3 mb-0 bg-secondary text-white">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/sean paul.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="sean paul album cover"
+          />
+          <p class="mb-0">No. 1</p>
+          <p class="mb-0">Sean Paul</p>
+          <p class="mb-0">Imperial Blaze (2009)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/marey carey.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="Mariah Carey album cover"
+          />
+          <p class="mb-0">No. 2</p>
+          <p class="mb-0">Mariah Carey</p>
+          <p class="mb-0">Charmbracelet (2002)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/ashlee simpson.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="I Am Me cover"
+          />
+          <p class="mb-0">No. 3</p>
+          <p class="mb-0">Ashlee Simpson</p>
+          <p class="mb-0">I Am Me (2005)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/Lenny Kravitz.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="Baptism Album cover"
+          />
+          <p class="mb-0">No. 4</p>
+          <p class="mb-0">Lenny Kravitz</p>
+          <p class="mb-0">Baptism (2004)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/Kreayshawn.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="Somethin' 'Bout Kreay album cover"
+          />
+          <p class="mb-0">No. 5</p>
+          <p class="mb-0">Kreayshawn</p>
+          <p class="mb-0">Somethin' 'Bout Kreay (2005)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/Black Flag.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="What The... album cover"
+          />
+          <p class="mb-0">No. 6</p>
+          <p class="mb-0">Black Flag</p>
+          <p class="mb-0">What The... (2007)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/Chingy.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="Hoodstar album cover"
+          />
+          <p class="mb-0">No. 7</p>
+          <p class="mb-0">Chingy</p>
+          <p class="mb-0">Hoodstar (2009)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/Megadeth.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="Super Collider album cover"
+          />
+          <p class="mb-0">No. 8</p>
+          <p class="mb-0">Megadeth</p>
+          <p class="mb-0">Super Collider (2001)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/Nickelback.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="All The Right Reasons album cover"
+          />
+          <p class="mb-0">No. 9</p>
+          <p class="mb-0">Nickelback</p>
+          <p class="mb-0">All The Right Reasons (2003)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 album">
+          <img
+            src="./images/Enya.webp"
+            class="img-fluid w-100 img-thumbnail"
+            alt="A Day Without Rain album cover"
+          />
+          <p class="mb-0">No. 10</p>
+          <p class="mb-0">Enya</p>
+          <p class="mb-0">A Day Without Rain (2008)</p>
+        </div>
+      </div>
+    </section>
+    <footer class="container-fluid bg-dark p-3">
+      <div class="container text-white">
+        <p class="total">TOTAL IMAGES:</p>
+        <p class="total-alb">TOTAL ALBUM:</p>
+        <p class="text-center">
+          copyright &copy; kenneth obi | obikenneth913@gmail.com | universiteto
+          g. 8
+        </p>
+      </div>
+    </footer>
+
+    <!-- EXERCISE 4
+        Create a new section with an album tracklist inside a Bootstrap table.
+        The row colors of the table must be alternated.
+
+        There should be a column for the track order number, one for the title and one for the track duration.
+        (If you want, you can also add extra columns)
+    -->
+
+    <!-- EXERCISE 5
+        Add a DELETE bootstrap button at the end of each row of the tracklist. 
+        Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
+
+        ## EXTRA CSS CHALLENGE ##
+        Make only one button visible at a time, for each row, when the single row gets hovered. 
+        Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
+    -->
+
+    <!-- EXERCISE 6
+        Add an "Add Track" button under the tracklist of the album. 
+        It should have a nice shadow transition when its hovered (with the box-shadow property) 
+        to look like as if the button was elevating itself.
+    -->
+
+    <!-- EXERCISE 7
+        On the click of "Add Track" button, a modal should appear.
+        (check in the documentation the modal + button example)
+        
+        The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
+        - Track number
+        - Track title
+        - Track duration
+
+        The fields should be inside an Input Group and divided in 2 columns.
+    -->
+
+    <!-- ############### -->
+    <!-- ###  EXTRA  ### -->
+    <!-- ############### -->
+
+    <!-- EXERCISE 8
+        The modal should contain 2 buttons at the bottom:
+        - Add => Adds a new track in the tracklist with the data of the input fields.
+        - Close => closes the modal
+
+        https://getbootstrap.com/docs/4.6/components/alerts/
+        [EXTRA] Make the message disappear after 5 seconds
+        https://www.w3schools.com/jsref/met_win_settimeout.asp
+    -->
+
+    <!-- EXERCISE 9
+        Alert the user with a success message when the track gets added, or when a track gets deleted.
+     -->
+
+    <!-- EXERCISE 10
+        Considering the "Add Track" functionality that you've created on ex. 8: 
+         - The new list-element added to the list should appear with a fade-in effect
+     -->
+
+    <!-- EXERCISE 11
+        Considering the button you've created in ex. 5 that deletes the row:
+        Add a fade-out effect to the row before it gets removed, using a CSS transition effect
+    -->
+    <script src="./script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

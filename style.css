@@ -1,0 +1,43 @@
+body {
+  background-color: azure;
+}
+img:hover {
+  transform: scale(1.05);
+}
+.list-group-item {
+  font-size: 20px;
+}
+span {
+  color: #aaa;
+}
+a {
+  transition: all 0.5s;
+}
+a:hover {
+  text-decoration: underline !important;
+}
+.navbar {
+  opacity: 50;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.bio {
+  animation: fadeIn 5s;
+}
+.boi-img {
+  animation: fadeIn 5s;
+}
+.music-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#album-review > div.row > div a:last-of-type {
+  font-size: 32px;
+}
