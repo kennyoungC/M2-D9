@@ -1,8 +1,15 @@
 `use srict`;
 
+const trackNumber = document.querySelector(`#track-number`);
+const trackTitle = document.querySelector(`#track-title`);
+const trackDuration = document.querySelector(`#track-duration`);
+const trackYear = document.querySelector(`#track-year`);
+const btnAdd = document.querySelector(`.btn-add`);
+const table = document.querySelector(`tbody`);
 const deleteBtn = document.querySelectorAll(
   `#album-review > div.row > div a:last-of-type `
 );
+
 const toDeleteCol = function () {
   deleteBtn.forEach((del) => {
     del.addEventListener(`click`, function () {
@@ -17,28 +24,33 @@ const toDeleteCol = function () {
   });
 };
 toDeleteCol();
-const trackNumber = document.querySelector(`#track-number`);
-const trackTitle = document.querySelector(`#track-title`);
-const trackDuration = document.querySelector(`#track-duration`);
-const trackYear = document.querySelector(`#track-year`);
-const btnAdd = document.querySelector(`.btn-add`);
-const table = document.querySelector(`table`);
-btnAdd.addEventListener(`click`, function () {
-  const newRow = ` <tr>
-  <th scope="row">${trackNumber.value}</th>
-  <td>${trackTitle.value}</td>
-  <td>${trackYear.value}</td>
-  <td>${trackDuration.value}${trackDuration.value > 1 ? `hrs` : `hr`}</td>
-</tr>`;
-  table.innerHTML += newRow;
-  addDelBtn();
-  executeDel();
-  setTimeout(() => {
-    $("#exampleModal").modal("hide");
-  }, 10);
+const addNewRow = function () {
+  btnAdd.addEventListener(`click`, function () {
+    const newRow = ` <tr class="new-row">
+    <th scope="row">${trackNumber.value}</th>
+    <td>${trackTitle.value}</td>
+    <td>${trackYear.value}</td>
+    <td>${trackDuration.value}${trackDuration.value > 1 ? `hrs` : `hr`}</td>
+    </tr>`;
+    table.innerHTML += newRow;
+    addDelBtn();
+    executeDel();
+    setTimeout(() => {
+      $("#exampleModal").modal("hide");
+    }, 10);
+    // setTimeout(() => {
+    //   alert(`track added successfully`);
+    // }, 500);
+    document.querySelector(`.alert.alert-success`).classList.toggle(`d-none`);
+    document.querySelector(`.alert.alert-success`).classList.add(`d-none`);
 
-  // alert(`track added succefully`);
-});
+    trackDuration.value = "";
+    trackNumber.value = "";
+    trackTitle.value = ``;
+    trackYear.value = ``;
+  });
+};
+addNewRow();
 const addDelBtn = function () {
   const delete_ = document.getElementsByClassName(`delete`);
   while (delete_.length > 0) {
@@ -61,7 +73,12 @@ const executeDel = function () {
   allDelete.forEach((del) => {
     del.addEventListener(`click`, function (e) {
       e.preventDefault();
-      e.target.closest("tr").remove();
+      e.target.closest(`tr`).classList.add(`hidden`);
+      console.log(e.target);
+      setTimeout(() => {
+        e.target.closest("tr").remove();
+        alert(`deleted successfully`);
+      }, 500);
     });
   });
 };
