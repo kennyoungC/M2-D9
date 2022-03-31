@@ -41,12 +41,18 @@ const addNewRow = function () {
     setTimeout(() => {
       $("#exampleModal").modal("hide");
     }, 10);
-    // setTimeout(() => {
-    //   alert(`track added successfully`);
-    // }, 500);
     const alert = document.querySelector(`.alert.alert-success`);
+    setTimeout(() => {
+      alert.classList.remove(`d-none`);
+      alert.classList.add(`show`);
+    }, 500);
 
-    alert.classList.toggle(`d-none`);
+    setTimeout(() => {
+      alert.classList.remove(`show`);
+    }, 6000);
+    setTimeout(() => {
+      alert.classList.add(`d-none`);
+    }, 6500);
 
     trackDuration.value = "";
     trackNumber.value = "";
